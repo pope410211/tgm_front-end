@@ -116,7 +116,7 @@ p {
 }
 
 /* ==== General styles ==== */
-section {
+.tgm {
   height: 600px;
   padding: 3rem 0;
   position: relative;
@@ -138,17 +138,17 @@ section {
 .wrapper.large-wrap {
   max-width: 100%;
 }
-section:nth-of-type(3n + 1) {
+.tgm-h {
   background-size: cover;
 }
-section:nth-of-type(1) {
+.tgm-h {
   background-image: url(/assets/tgm_hero.png);
   background-size: 100% 100%;
 }
-section:nth-of-type(3) {
+.tgm-g {
   background-image: url(/assets/tgm-3piece.jpg);
 }
-section:nth-of-type(2) {
+.tgm-grad {
   background: -webkit-linear-gradient(
     90deg,
     $brand-beach 10%,
@@ -167,7 +167,7 @@ section:nth-of-type(2) {
   ); /* Opera 11.10+ */
   background: linear-gradient(90deg, $brand-beach 10%, $brand-trq-drk 90%); /* W3C */
 }
-section:nth-of-type(4) {
+.tgm-grad-1 {
     background: -webkit-linear-gradient(
     90deg,
     $brand-trq-drk 10%,
@@ -195,4 +195,16 @@ section:nth-of-type(4) {
   section {
     height: 700px;
   }
+}
+
+
+
+// login-screen
+
+.login-card {
+	background-color: $brand-beach;
+
+	.login-c-head {
+		color: $brand-trq-drk;
+	}
 }
