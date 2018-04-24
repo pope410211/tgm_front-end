@@ -16,6 +16,9 @@
 				});
 			};
 
+			auth.logOut = function() {
+				return fireAuth.$signOut();
+			};
 			return auth;
 		});
 }());

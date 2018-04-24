@@ -22,6 +22,7 @@
 			'ngMessages',
 			'ngMdIcons',
 			'ngStorage',
+			'md.data.table',
 			'firebase',
 			'FireAuth',
 			'FireData'
@@ -41,7 +42,7 @@
 				templateUrl: 'views/includes/login-header.html',
 				controller: 'HeaderCtrl',
 				controllerAs: 'nav'
-			}
+			};
 			$urlRouterProvider.when('/', '/home');
 			$urlRouterProvider.otherwise('/home');
 			$stateProvider
@@ -80,6 +81,6 @@
 					},
 					footer: footerObj
 				}
-			})
+			});
 		});
 }());

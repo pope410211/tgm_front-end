@@ -1,4 +1,32 @@
-<section class="tgm-g tgm" flex layout-fill layout-padding>
+<section class="vendor-sales" flex layout-fill layout-padding>
 	<br />
-
+	<section class="md-whiteframe-1dp vs-section" flex-gt-sm="80" flex flex-offset-gt-sm="10">
+		<md-table-container class="vs-table">
+			<table md-table>
+				<thead md-head md-order="query.order">
+				<tr md-row>
+					<th md-column md-order-by="calories.value">Date of Sale</th>
+					<th md-column>SKU</th>
+					<th md-column>Item</th>
+					<th md-column md-numeric>QTY</th>
+					<th md-column md-numeric>Price</th>
+				</tr>
+				</thead>
+				<tbody md-body>
+				<tr md-row ng-repeat="vi in vendorSales | orderBy: '-date'">
+					<td md-cell>{{vi.date | date}}</td>
+					<td md-cell>{{vendor.vendorSku}}</td>
+					<td md-cell>{{vi.item}}</td>
+					<td md-cell>{{vi.qty | number:0}}</td>
+					<td md-cell class="vs-money">{{vi.price / 100 | currency: '$'}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</md-table-container>
+		<md-divider></md-divider>
+		<div class="vs-total" layout="row" layout-padding>
+			<span>Items Sold: {{itemTotal}}</span> <span flex></span><span>Total Sales: {{salesTotal / 100 | currency: '$'}}</span>
+		</div>
+		<!-- <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination> -->
+	</section>
 </section>

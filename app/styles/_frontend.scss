@@ -208,3 +208,26 @@ p {
 		color: $brand-trq-drk;
 	}
 }
+
+
+// Vendor Sales
+.vendor-sales {
+	background-color: $brand-trq-drk;
+	.vs-section{
+		background-color: $brand-trq-lt;
+		.vs-table {
+			table {
+				background-color: $brand-beach;
+	
+				.vs-money {
+					text-align: right;
+				}
+			}
+			
+		}
+
+		.vs-total {
+			background-color: $brand-beach;
+		}
+	}
+}
