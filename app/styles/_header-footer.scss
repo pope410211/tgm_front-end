@@ -1,0 +1,41 @@
+// Header Styles
+#b2c-header {
+	position: fixed;
+	background-color: rgba(58,119,127, 0.5);
+}
+
+.b2cLinkList {
+	.b2cLinkItem {
+		.b2cLink {
+			color: $brand-white;
+			&:hover {
+				color: $brand-trq-drk;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+
+// Footer Styles
+
+.b2cFooter {
+	background-color: $brand-beach;
+	padding-top: 4rem;
+	padding-bottom: 2.5rem;
+	.footer-list {
+		list-style: none;
+		color: $brand-trq-drk;
+		.footer-link {
+
+			&:hover {
+			color: $brand-trq-lt;
+			cursor: pointer;
+			}
+		}
+		.logo-footer {
+			height: 5rem;
+			width: 6rem;
+		}
+	}
+}

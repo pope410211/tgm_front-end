@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic);
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font: normal 112.5%/1.65 serif; /* base font size 18px with 1.65 line-height */
+  -moz-font-feature-settings: "liga=1, dlig=1"; /* common and discretionary ligatures */
+  -ms-font-feature-settings: "liga", "dlig";
+  -webkit-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  margin-top: 0;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+}
+p {
+  margin-top: 4rem;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.gigantic {
+  font-size: 11rem;
+}
+.supersize {
+  font-size: 8rem;
+}
+.tera {
+  font-size: 6.5rem; /* 117 / 18 = 6.5 */
+  margin-bottom: 0.25385rem;
+}
+
+.giga {
+  font-size: 5rem; /* 90 / 18 = 5 */
+  margin-bottom: 0.33rem;
+}
+
+.mega {
+  font-size: 4rem; /* 72 / 18 = 4 */
+  margin-bottom: 0.4125rem;
+}
+
+.alpha {
+  font-size: 3.33333rem; /* 60 / 18 = 3.3333 */
+  margin-bottom: 0.495rem;
+}
+
+.beta {
+  font-size: 2.6667rem; /* 48 / 18 = 2.6667 */
+  margin-bottom: 0.61875rem;
+}
+
+.gamma {
+  font-size: 2rem; /* 36 / 18 = 2 */
+  margin-bottom: 0.825rem;
+}
+
+.delta {
+  font-size: 1.3333333333333333rem; /* 24 / 18 = 1.3333 */
+  margin-bottom: 1.2375rem;
+}
+
+.epsilon {
+  font-size: 1.16667rem; /* 21 / 18 = 1.1667 */
+  margin-bottom: 1.41429rem;
+}
+
+.zeta {
+  font-size: 1rem; /* 18 = 18 × 1 */
+  margin-bottom: 1.65rem;
+}
+/* ==== Typefaces  ==== */
+
+.open-sans {
+  font-family: "Open Sans";
+}
+.lato {
+  font-family: "Lato";
+}
+
+
+/* ===== Flourish, heading horizontal lines, etc. ==== */
+
+.thick-header-line:before,
+.thick-header-line:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 7rem;
+  height: 4px;
+  background-color: #fff;
+  top: 50%;
+  margin-bottom: -4px;
+}
+.thick-header-line:before {
+  left: -7.5rem;
+}
+.thick-header-line:after {
+  right: -7.5rem;
+}
+
+/* ==== General styles ==== */
+section {
+  height: 600px;
+  padding: 3rem 0;
+  position: relative;
+}
+.wrapper {
+  max-width: 53.33rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  transform: translateY(-50%);
+  top: 50%;
+  text-align: center;
+}
+
+.shade {
+    background-color: rgba(96, 96, 97, 0.5);
+    padding: 1rem;
+}
+.wrapper.large-wrap {
+  max-width: 100%;
+}
+section:nth-of-type(3n + 1) {
+  background-size: cover;
+}
+section:nth-of-type(1) {
+  background-image: url(/assets/tgm_hero.png);
+  background-size: 100% 100%;
+}
+section:nth-of-type(3) {
+  background-image: url(/assets/tgm-3piece.jpg);
+}
+section:nth-of-type(2) {
+  background: -webkit-linear-gradient(
+    90deg,
+    $brand-beach 10%,
+    $brand-trq-drk 90%
+  ); /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(
+    90deg,
+    $brand-beach 10%,
+    $brand-trq-drk 90%
+  ); /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, $brand-beach 10%, $brand-trq-drk 90%); /* IE10 */
+  background: -o-linear-gradient(
+    90deg,
+    $brand-beach 10%,
+    $brand-trq-drk 90%
+  ); /* Opera 11.10+ */
+  background: linear-gradient(90deg, $brand-beach 10%, $brand-trq-drk 90%); /* W3C */
+}
+section:nth-of-type(4) {
+    background: -webkit-linear-gradient(
+    90deg,
+    $brand-trq-drk 10%,
+    $brand-trq-lt 90%
+  ); /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(
+    90deg,
+    $brand-trq-drk 10%,
+    $brand-trq-lt 90%
+  ); /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, $brand-trq-drk 10%, $brand-trq-lt 90%); /* IE10 */
+  background: -o-linear-gradient(
+    90deg,
+    $brand-trq-drk 10%,
+    $brand-trq-lt 90%
+  ); /* Opera 11.10+ */
+  background: linear-gradient(90deg, $brand-trq-drk 10%, $brand-trq-lt 90%); /* W3C */
+}
+
+.tgm-girls {
+    padding-right: 2rem;
+}
+/* Media queries */
+@media screen and (min-width: 1440px) {
+  section {
+    height: 700px;
+  }
+}
