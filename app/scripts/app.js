@@ -37,6 +37,11 @@
 				controller: 'FooterCtrl',
 				controllerAs: 'footer'
 			};
+			var loginHeaderObj = {
+				templateUrl: 'views/includes/login-header.html',
+				controller: 'HeaderCtrl',
+				controllerAs: 'nav'
+			}
 			$urlRouterProvider.when('/', '/home');
 			$urlRouterProvider.otherwise('/home');
 			$stateProvider
@@ -63,6 +68,18 @@
 					},
 					'footer': footerObj
 				}
-			});
+			})
+			.state('vendorSales', {
+				url: '/vendor-sales',
+				views: {
+					'header': loginHeaderObj,
+					'main': {
+						templateUrl: 'views/admin/vendorSales.html',
+						controller: 'VendorCtrl',
+						controllerAs: 'vendor'
+					},
+					footer: footerObj
+				}
+			})
 		});
 }());

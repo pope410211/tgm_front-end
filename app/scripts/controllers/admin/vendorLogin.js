@@ -23,7 +23,7 @@
 						if ( roleAuth.admin === false || roleAuth.web === false ) {
 							$state.go();
 						} else {
-							$state.go('vendorPage');
+							$state.go('vendorSales');
 						}
 					});
 				}).catch(function(error) {
