@@ -1,19 +1,21 @@
 <section class="tgm-g tgm" flex layout-fill layout-padding>
-	<div class="md-whiteframe-12dp login-card" layout="column" flex-gt-sm="60" flex="90" flex-offset-gt-sm="20">
+	<br />
+	<div class="md-whiteframe-12dp login-card" layout-margin layout-padding layout="column" flex-gt-sm="60" flex="90" flex-offset-gt-sm="20">
 		<h1 class="login-c-head">Welcome Vendors!</h1>
 		<md-divider layout-padding></md-divider>
 		<form name="loginForm">
 			<md-input-container class="md-icon-float md-block input-container-wh">
 				<label>Email</label>
-				<ng-md-icon icon="account_circle"></ng-md-icon>
+				<md-icon ng-md-icon icon="account_circle"></md-icon>
 				<input type="email" name="email" ng-model="login.email" required md-no-asterisk>
 				<div ng-messages="loginForm.email.$error">
 					<div ng-message="required">Please enter your email address.</div>
 				</div>
 			</md-input-container>
-			<md-input-container class="md-block" flex-gt-sm>
+			<md-input-container class="md-icon-float md-block" flex-gt-sm>
 				<label>Password</label>
-				<input type="password" name="password" ng-model="login.Password" required md-no-asterisk minlength="6" />
+				<md-icon ng-md-icon icon="lock_outline"></md-icon>
+				<input type="password" name="password" ng-model="login.password" required md-no-asterisk minlength="6" />
 				<div class="md-caption">Please make sure your password is at least 6 characters</div>
 				<div ng-messages="loginForm.password.$error">
 					<div ng-message-exp="['required', 'minlength']">
@@ -23,9 +25,9 @@
 			</md-input-container>
 		</form>
 		<section layout="row">
-				<md-button class="md-raised" ng-click="">Forgot Password?</md-button>
+				<md-button class="md-raised" ng-click="login.temp()">Forgot Password?</md-button>
 				<span flex></span>
-				<md-button class="md-raised" ng-click="">Login</md-button>
+				<md-button class="md-raised" ng-click="login.login(login.email,login.password)">Login <md-icon ng-md-icon icon="login"></md-icon></md-button>
 		</section>
 	</div>
 </section>
