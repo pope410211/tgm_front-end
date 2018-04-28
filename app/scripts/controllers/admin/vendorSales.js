@@ -2,22 +2,26 @@
 'use strict';
 	angular
 		.module('ngTgmApp')
-		.controller('VendorCtrl', function($state, $scope, fireDataService, $sessionStorage) {
+		.controller('VendorCtrl', function($state, fireDataService, $sessionStorage) {
 			var userInfo = $sessionStorage.user;
+			var self = this;
+			/*
+				TODO: Check Authentication instead of SessionStorage.
+			*/
 			if(typeof userInfo !== 'undefined') {
 				this.vendorSku = userInfo.sku;
 				this.vendorName = userInfo.name;
 				fireDataService.getVendorSale(this.vendorSku).then(function(salesRes) {
-					$scope.vendorSales = salesRes;
+					self.vendorSales = salesRes;
 	
-					$scope.itemTotal = 0;
-					$scope.salesTotal = 0;
+					self.itemTotal = 0;
+					self.salesTotal = 0;
 	
-					for (var i =0; i < $scope.vendorSales.length; i++) {
-						var salePrice = parseInt($scope.vendorSales[i].price);
-						var itemQty = parseInt($scope.vendorSales[i].qty);
-						$scope.itemTotal += itemQty;
-						$scope.salesTotal += salePrice;
+					for (var i =0; i < self.vendorSales.length; i++) {
+						var salePrice = parseInt(self.vendorSales[i].price);
+						var itemQty = parseInt(self.vendorSales[i].qty);
+						self.itemTotal += itemQty;
+						self.salesTotal += salePrice;
 	
 					}
 	

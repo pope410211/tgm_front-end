@@ -1,4 +1,4 @@
-<section class="vendor-sales" flex layout-fill layout-padding>
+<section class="vendor-sales" flex layout-fill layout-padding ng-cloak>
 	<br />
 	<h1>Welcome {{vendor.vendorName}}!</h1>
 	<section class="md-whiteframe-1dp vs-section" flex-gt-sm="80" flex flex-offset-gt-sm="10">
@@ -14,7 +14,7 @@
 				</tr>
 				</thead>
 				<tbody md-body>
-				<tr md-row ng-repeat="vi in vendorSales | orderBy: '-date'">
+				<tr md-row ng-repeat="vi in vendor.vendorSales | orderBy: '-date'">
 					<td md-cell>{{vi.date | date}}</td>
 					<td md-cell>{{vendor.vendorSku}}</td>
 					<td md-cell>{{vi.item}}</td>
@@ -26,7 +26,7 @@
 		</md-table-container>
 		<md-divider></md-divider>
 		<div class="vs-total" layout="row" layout-padding>
-			<span>Items Sold: {{itemTotal}}</span> <span flex></span><span>Total Sales: {{salesTotal / 100 | currency: '$'}}</span>
+			<span>Items Sold: {{vendor.itemTotal}}</span> <span flex></span><span>Total Sales: {{vendor.salesTotal / 100 | currency: '$'}}</span>
 		</div>
 		<!-- <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination> -->
 	</section>
