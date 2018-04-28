@@ -24,10 +24,10 @@
 				</div>
 			</md-input-container>
 		</form>
-		<section layout="row">
-				<md-button class="md-raised" ng-click="login.temp()">Forgot Password?</md-button>
+		<section layout="row" flex>
+				<md-button class="md-raised md-primary br-clr-wh" ng-click="login.forgotPass(login.email)">Forgot Password?</md-button>
 				<span flex></span>
-				<md-button class="md-raised" ng-click="login.login(login.email,login.password)">Login <md-icon ng-md-icon icon="login"></md-icon></md-button>
+				<md-button class="md-raised md-primary br-clr-wh" ng-click="login.loginUser(login.email,login.password)">Login <md-icon class="br-clr-wh" ng-md-icon icon="login"></md-icon></md-button>
 		</section>
 	</div>
 </section>

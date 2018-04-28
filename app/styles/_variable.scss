@@ -6,7 +6,8 @@ $brand-beach: #f8eddb;
 
 // Shared Classes
 .br-clr-wh {
-	color: $brand-white;
+	color: $brand-white !important;
+	fill: $brand-white;
 }
 
 .btn-tgm-primary {

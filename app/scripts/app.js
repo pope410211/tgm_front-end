@@ -25,7 +25,8 @@
 			'md.data.table',
 			'firebase',
 			'FireAuth',
-			'FireData'
+			'FireData',
+			'TGMTheme'
 		])
 		.config(function ($stateProvider, $urlRouterProvider) {
 			var headerObj = {

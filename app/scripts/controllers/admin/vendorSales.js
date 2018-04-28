@@ -6,6 +6,7 @@
 			var userInfo = $sessionStorage.user;
 			if(typeof userInfo !== 'undefined') {
 				this.vendorSku = userInfo.sku;
+				this.vendorName = userInfo.name;
 				fireDataService.getVendorSale(this.vendorSku).then(function(salesRes) {
 					$scope.vendorSales = salesRes;
 	

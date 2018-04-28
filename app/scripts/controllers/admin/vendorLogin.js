@@ -7,11 +7,14 @@
 			var fireAuth = fireAuthService;
 			var fireData = fireDataService;
 			var storage = $sessionStorage;
-			this.login = function(email, password) {
+
+			this.loginUser = function(email, password) {
 				fireAuth.login(email,password).then(function(loginRes) {
 
 					var userId = loginRes.uid;
+					console.log('userid', userId);
 					fireData.getUserInfo(userId).then(function(userRes) {
+						console.log('userRes', userRes);
 						var userInfo = {
 							name: userRes.name,
 							roles: userRes.roles,
@@ -20,7 +23,7 @@
 						};
 						storage.user = userInfo;
 						var roleAuth = userInfo.roles;
-						if ( roleAuth.admin === false || roleAuth.web === false ) {
+						if ( roleAuth.admin === true || roleAuth.web === true ) {
 							$state.go();
 						} else {
 							$state.go('vendorSales');
@@ -28,6 +31,13 @@
 					});
 				}).catch(function(error) {
 					console.error('Login Controller Error:', error);
+				});
+			};
+
+			this.forgotPass = function(email) {
+				console.log('emai', email);
+				fireAuth.sendPasswordReset(email).then(function(emailRes) {
+					console.log('email Sent', emailRes);
 				});
 			};
 		}); // Enc Contoller
