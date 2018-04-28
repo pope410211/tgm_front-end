@@ -1,31 +1,12 @@
-<md-toolbar id="b2c-header" ng-cloak flex show-gt-sm hide>
+<md-toolbar id="b2c-header" ng-cloak flex>
 	<div class="md-toolbar-tools">
 		<a ui-sref="home"><img src="../../assets/tgm_logo-WH.png" alt="TGM-Logo White" height="40" /></a>
-		<span flex="5"></span>
-		<h2 flex md-truncate>Turtle Girls Market</h2>
-		<md-button class="br-clr-wh" ng-click="header.scrollTo('tgm')">The Turtle Girls</md-button>
-		<md-button class="br-clr-wh" ng-click="header.scrollTo('tgm-a')">About TGM</md-button>
-		<md-button class="br-clr-wh" ui-sref="login">Vendor Login</md-button>
+		<span flex flex-gt-sm="5"></span>
+			<h2 show-gt-sm hide md-truncate>Turtle Girls Market</h2>
+		<span flex-gt-sm></span>
+		<md-button class="br-clr-wh" ng-click="header.scrollTo('tgm')" show-gt-sm hide>The Turtle Girls</md-button>
+		<md-button class="br-clr-wh" ng-click="header.scrollTo('tgm-a')" show-gt-sm hide>About TGM</md-button>
+		<md-button class="br-clr-wh" ui-sref="login" show-gt-sm hide>Vendor Login</md-button>
+		<md-button class="br-clr-wh" ui-sref="login" show-sm show-xs hide> Login</md-button>
 	</div>
 </md-toolbar>
-
-<md-fab-toolbar id="b2c-mobile-header" md-open="false" md-direction="left" flex show-sm show-xs hide>
-	<md-fab-trigger class="align-with-text">
-		<md-button aria-label="menu" class="md-fab md-primary">
-			<md-icon class="br-clr-wh" ng-md-icon icon="menu"></md-icon>
-		</md-button>
-	</md-fab-trigger>
-	<md-toolbar>
-		<md-fab-actions class="md-toolbar-tools">
-			<md-button aria-label="comment" class="md-icon-button">
-				<md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
-			</md-button>
-			<md-button aria-label="label" class="md-icon-button">
-				<md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
-			</md-button>
-			<md-button aria-label="photo" class="md-icon-button">
-				<md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
-			</md-button>
-		</md-fab-actions>
-	</md-toolbar>
-</md-fab-toolbar>

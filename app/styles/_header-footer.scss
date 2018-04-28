@@ -17,7 +17,7 @@
 }
 // B2C Mobile
 #b2c-mobile-header {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 }
 
@@ -31,8 +31,8 @@
 
 .b2cFooter {
 	background-color: $brand-beach;
-	padding-top: 4rem;
-	padding-bottom: 2.5rem;
+	// padding-top: 4rem;
+	// padding-bottom: 2.5rem;
 	.footer-list {
 		list-style: none;
 		color: $brand-trq-drk;
@@ -43,9 +43,9 @@
 			cursor: pointer;
 			}
 		}
-		.logo-footer {
-			height: 5rem;
-			width: 6rem;
-		}
+	}
+	.logo-footer {
+		height: 5rem;
+		width: 6rem;
 	}
 }

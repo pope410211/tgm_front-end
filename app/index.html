@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Turtle Girls Market - Get Your Turtle On!</title>
 		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0">
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<!-- build:css(.) styles/vendor.css -->
 		<!-- bower:css -->
@@ -27,13 +27,13 @@
 		<meta name="msapplication-config" content="assets/browserconfig.xml">
 		<meta name="theme-color" content="#3a777f">
 	</head>
-	<body ng-app="ngTgmApp" flex>
+	<body ng-app="ngTgmApp" layout="column" flex>
 		<!--[if lte IE 8]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<nav ui-view="header" flex></nav>
-		<div ui-view="main" flex></div>
-		<footer ui-view="footer" class="footer b2cFooter" id="footer" flex></footer>
+		<nav ui-view="header"></nav>
+		<div ui-view="main" layout="row"></div>
+		<footer ui-view="footer" class="footer b2cFooter" id="footer" layout-padding></footer>
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
