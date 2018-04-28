@@ -1,4 +1,7 @@
-<section class="tgm-g tgm" flex>
+<section class="tgm-g tgm" layout-fill flex>
+	<div ng-if="login.loading" class="loading-overlay" layout="row" layout-sm="column" layout-align="space-around">
+		<md-progress-circular class="md-warn md-hue-2" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+	</div>
 	<br />
 	<div class="md-whiteframe-12dp login-card" layout-padding layout="column" flex-gt-sm="60" flex="100" flex-offset-gt-sm="20">
 		<h1 class="login-c-head">Welcome Vendors!</h1>

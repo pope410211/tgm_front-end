@@ -23,7 +23,8 @@
 
 // ADMIN
 #b2b-header {
-	background-color: rgba(58,119,127, 0.5);
+	background-color: rgba(127,207,204, 0.5);
+	position: fixed;
 }
 
 
@@ -31,6 +32,9 @@
 
 .b2cFooter {
 	background-color: $brand-beach;
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
 	.footer-list {
 		list-style: none;
 		color: $brand-trq-drk;

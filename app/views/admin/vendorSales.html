@@ -1,4 +1,8 @@
 <section class="vendor-sales" flex layout-fill layout-padding ng-cloak>
+	<div ng-if="vendor.loading" class="loading-overlay" layout="row" layout-sm="column" layout-align="space-around">
+		<md-progress-circular class="md-warn md-hue-2" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+	</div>
+	<br />
 	<br />
 	<h1>Welcome {{vendor.vendorName}}!</h1>
 	<section class="md-whiteframe-1dp vs-section" flex-gt-sm="80" flex flex-offset-gt-sm="10">
@@ -6,7 +10,7 @@
 			<table md-table>
 				<thead md-head md-order="query.order">
 				<tr md-row>
-					<th md-column md-order-by="calories.value">Date of Sale</th>
+					<th md-column>Date of Sale</th>
 					<th md-column>SKU</th>
 					<th md-column>Item</th>
 					<th md-column md-numeric>QTY</th>
@@ -14,7 +18,7 @@
 				</tr>
 				</thead>
 				<tbody md-body>
-				<tr md-row ng-repeat="vi in vendor.vendorSales | orderBy: '-date'">
+				<tr md-row ng-repeat="vi in vendor.vendorSales | orderBy: '-date' | limitTo: vendor.query.limit : (vendor.query.page -1) * vendor.query.limit">
 					<td md-cell>{{vi.date | date}}</td>
 					<td md-cell>{{vendor.vendorSku}}</td>
 					<td md-cell>{{vi.item}}</td>
@@ -28,6 +32,6 @@
 		<div class="vs-total" layout="row" layout-padding>
 			<span>Items Sold: {{vendor.itemTotal}}</span> <span flex></span><span>Total Sales: {{vendor.salesTotal / 100 | currency: '$'}}</span>
 		</div>
-		<!-- <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination> -->
+		<md-table-pagination class="vs-section" md-limit="vendor.query.limit" md-limit-options="[5, 10, 15]" md-page="vendor.query.page" md-total="{{vendor.itemTotal}}" md-page-select></md-table-pagination>
 	</section>
 </section>

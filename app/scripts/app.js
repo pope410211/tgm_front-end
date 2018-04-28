@@ -80,7 +80,7 @@
 						controller: 'VendorCtrl',
 						controllerAs: 'vendor'
 					},
-					footer: footerObj
+					'footer': {}
 				}
 			});
 		});

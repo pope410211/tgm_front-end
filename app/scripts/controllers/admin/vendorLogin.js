@@ -7,8 +7,12 @@
 			var fireAuth = fireAuthService;
 			var fireData = fireDataService;
 			var storage = $sessionStorage;
+			var self = this;
+			this.loading = false;
+
 
 			this.loginUser = function(email, password) {
+				self.loading = true;
 				fireAuth.login(email,password).then(function(loginRes) {
 
 					var userId = loginRes.uid;
