@@ -47,11 +47,17 @@
 						self.loading = false;
 					}
 				}).catch(function(error) {
-					console.error('Login Controller Error:', error);
-					var title = 'Authentication Error';
-					var message = '<b>Code: </b> <br />  <b>Message: </b> There was error logging in.<br />Please close your browser and try again.<br />If problem persists, contact Turtle Girls Market';
-					alertService.displayDialog(title, message, 'error');
-					self.loading = false;
+					try {
+						var title = 'Authentication Error';
+						var message = '<b>Code: </b>'+ error.code + ' <br />  <b>Message: </b>' + error.message;
+						alertService.displayDialog(title, message, 'error');
+						self.loading = false;
+					} catch(e) {
+						var title = 'Authentication Error';
+						var message = '<b>Code: </b> <br />  <b>Message: </b> There was error logging in.<br />Please close your browser and try again.<br />If problem persists, contact Turtle Girls Market';
+						alertService.displayDialog(title, message, 'error');
+						self.loading = false;
+					}
 				});
 			};
 
