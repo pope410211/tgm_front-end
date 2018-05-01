@@ -8,12 +8,13 @@
 
 			auth.login = function(email, password) {
 				return fireAuth.$signInWithEmailAndPassword(email, password)
-				.then(function(user) {
-					return user;
-				}).catch(function(error) {
-					console.error('Auth Service Login:', error);
-					return error;
-				});
+					.then(function(user) {
+						return user;
+					}).catch(function(error) {
+						console.error('Auth Service Login:', error);
+						throw error;
+					});
+
 			};
 
 			auth.logOut = function() {
@@ -29,10 +30,9 @@
 
 			auth.sendPasswordReset = function(email) {
 				return fireAuth.$sendPasswordResetEmail(email).then(function(res) {
-					console.log('res', res);
 					return true;
 				}).catch(function(error) {
-					console.error('Auht Service Reset Password: ', error);
+					console.error('Auth Service Reset Password: ', error);
 					return error;
 				});
 			};

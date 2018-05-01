@@ -25,8 +25,9 @@ body {
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -42px; /* the bottom margin is the negative value of the footer's height */
-	background-color: pink;
+	background-color: $brand-beach;
 	position: relative;
+	color: $brand-trq-drk;
 }
 
 // Loader:
@@ -39,4 +40,14 @@ body {
 	background-color: rgba(127,207,204,0.5);
 	z-index: 2;
 	cursor: pointer;
+}
+
+
+// Toast Class 
+
+.toast-success {
+	.md-toast-content {
+		background-color: green !important;
+		color: $brand-white !important;
+	}
 }

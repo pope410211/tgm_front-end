@@ -26,7 +26,8 @@
 			'firebase',
 			'FireAuth',
 			'FireData',
-			'TGMTheme'
+			'TGMTheme',
+			'AlertNotifications'
 		])
 		.config(function ($stateProvider, $urlRouterProvider) {
 			var headerObj = {

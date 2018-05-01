@@ -1,0 +1,36 @@
+<md-dialog aria-label="Forgot Password" flex-gt-sm="60" flex>
+	<form name="forgotPassForm" ng-cloak>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Forgot Password</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="ct.close()">
+					<md-tooltip md-direction="left" md-autohide="true">Close Dialog</md-tooltip>
+					<md-icon ng-md-icon icon="close" aria-label="Close dialog"></md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+
+		<md-dialog-content layout-padding>
+			<h4>Please Enter Your Email:</h4>
+				<md-input-container class="md-icon-float md-block input-container-wh">
+					<label>Email</label>
+					<md-icon ng-md-icon icon="account_circle"></md-icon>
+					<input type="email" name="email" ng-model="ct.email" required md-no-asterisk>
+					<div ng-messages="forgotPassForm.email.$error">
+						<div ng-message="required">Please enter your email address.</div>
+					</div>
+				</md-input-container>
+		</md-dialog-content>
+
+		<md-dialog-actions layout="row">
+			<md-button class="md-raised md-primary br-clr-wh" ng-click="ct.close()">
+				Cancel
+			</md-button>
+			<span flex></span>
+			<md-button class="md-accent md-raised br-clr-wh" ng-click="ct.sendResetEmail(ct.email)">
+				Submit
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>
