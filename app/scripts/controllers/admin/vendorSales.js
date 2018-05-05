@@ -49,6 +49,7 @@
 				});
 
 				this.getVendSales = function(vendSku) {
+					this.vendorSku = vendSku;
 					console.log('vend', vendSku);
 					fireDataService.getVendorSale(vendSku).then(function(salesRes) {
 						self.vendorSales = salesRes;
