@@ -14,7 +14,6 @@
 			this.loginUser = function(email, password) {
 				self.loading = true;
 				fireAuth.login(email,password).then(function(loginRes) {
-					console.log('login', loginRes);
 					try {
 						if (typeof loginRes.email !== 'undefined') {
 							var userId = loginRes.uid;
@@ -26,12 +25,12 @@
 									uid: userId
 								};
 								storage.user = userInfo;
-								var roleAuth = userInfo.roles;
-								if ( roleAuth.admin === true || roleAuth.web === true ) {
-									$state.go();
-								} else {
+								// var roleAuth = userInfo.roles;
+								// if ( roleAuth.admin === true || roleAuth.web === true ) {
+								// 	$state.go('adminSales');
+								// } else {
 									$state.go('vendorSales');
-								}
+								// }
 							});
 						} else {
 							var title = 'Authentication Error';

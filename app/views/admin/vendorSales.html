@@ -4,8 +4,14 @@
 	</div>
 	<br />
 	<br />
-	<h1>Welcome {{vendor.vendorName}}!</h1>
+	<h1 class="br-clr-wh">Welcome {{vendor.vendorName}}!</h1>
 	<section class="md-whiteframe-1dp vs-section" flex-gt-sm="80" flex flex-offset-gt-sm="10">
+		<md-input-container ng-if="vendor.authed" flex-gt-sm="40" flex>
+			<label>Vendor Sku</label>
+			<md-select name="type" ng-model="vendor.selectedSku" required md-on-close="vendor.getVendSales(vendor.selectedSku)">
+				<md-option ng-repeat="sk in vendor.vendorSkuArray" value="{{sk}}">{{sk}}</md-option>
+			</md-select>
+		</md-input-container>
 		<md-table-container class="vs-table">
 			<table md-table>
 				<thead md-head md-order="query.order">

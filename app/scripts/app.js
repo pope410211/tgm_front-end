@@ -84,5 +84,17 @@
 					'footer': {}
 				}
 			});
+			// .state('adminSales', {
+			// 	url: '/admin-page',
+			// 	views: {
+			// 		'header': loginHeaderObj,
+			// 		'main': {
+			// 			templateUrl: 'views/admin/vendorSales.html',
+			// 			controller: 'AdminCtrl',
+			// 			controllerAs: 'vendor'
+			// 		},
+			// 		'footer': {}
+			// 	}
+			// });
 		});
 }());
