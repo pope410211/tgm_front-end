@@ -1,12 +1,5 @@
-# ng-tgm
+#TGM
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
-
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+### Design and Style Choices
+1. Nav
+	* Mobile Layout - I chose not to use a dropdown menu for the 3 links, as I felt it still looked nice, and would only add to the amount of 'clicks' for a user to get where they are going.
