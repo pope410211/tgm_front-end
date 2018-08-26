@@ -18,7 +18,6 @@
 			'ngSanitize',
 			'ngTouch',
 			'ui.router',
-			'ngMessages',
 			'ngStorage',
 			'firebase',
 			'FireAuth',
