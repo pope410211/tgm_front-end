@@ -1,0 +1,68 @@
+/* BEGIN: HEADER SCSS */
+
+.hero-img {
+	background-image: url("../images/hero-img.jpg");
+	height: 100vh;
+	width: 100vw;
+
+	// Flexbox
+	display: flex;
+	justify-content: center;
+
+	text-align: center;
+	.hero-nav {
+		color: #fff;
+		padding-top: 2rem;
+		align-items: center;
+		.logo {
+			width: 10rem;
+			vertical-align: middle;
+		}
+
+		.nav-links {
+			list-style-type: none;
+			display: inline-flex;
+
+			li {
+				padding: 1rem;
+				a {
+					color: #fff;
+					text-decoration: none;
+	
+					&:hover {
+						color: $tgm-trlt-cl;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		.nav-icons {
+			list-style: none;
+			display: inline-flex;
+			vertical-align: middle;
+			li {
+				padding-right: .5rem;
+				a {
+					img {
+						width: 2rem;
+					}
+
+					&:hover {
+						img {
+							width: 4rem;
+							clear: both;
+							transform: scale(1,1)
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+/* END: HEADER SCSS */
+/* BEGIN: FOOTER SCSS */
+/* END: FOOTER SCSS */

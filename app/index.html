@@ -8,13 +8,12 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<!-- build:css(.) styles/vendor.css -->
 		<!-- bower:css -->
-		<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-		<link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
-		<link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.css" />
+
 		<!-- endbower -->
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
 		<link rel="stylesheet" href="styles/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<!-- endbuild -->
 		<!-- Favicons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -27,16 +26,15 @@
 		<meta name="msapplication-config" content="assets/browserconfig.xml">
 		<meta name="theme-color" content="#3a777f">
 	</head>
-	<body ng-app="ngTgmApp" layout="column" flex>
+	<body ng-app="ngTgmApp">
 		<!--[if lte IE 8]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<nav ui-view="header"></nav>
-		<main layout="column">
-			<div ui-view="main"></div>
-		</main>
-		<footer ui-view="footer" class="footer b2cFooter" id="footer"></footer>
-
+		<div class="container">
+			<nav ui-view="header"></nav>
+			<main ui-view="main"></main>
+			<footer ui-view="footer" class="footer b2cFooter" id="footer"></footer>
+		</div>
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
 		<script src="bower_components/angular/angular.js"></script>

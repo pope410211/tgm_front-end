@@ -1,0 +1,29 @@
+
+
+// Colors
+$tgm-tr-cl: #598185;
+$tgm-trlt-cl: #92d3cf;
+$sand-cl: #f8eddb;
+
+// Screen sizes - Mobile First
+$sml-scr: 576px;
+$med-scr: 768px;
+$lrg-scr: 992px;
+$xtra-lr-scr: 1200px;
+
+// Font Info.
+$main-ft: 'Montserrat', sans-serif;
+
+// @mixins:
+
+// base-classes
+body, html {
+	margin: 0;
+	background-color: $sand-cl;
+}
+.container {
+	font: $main-ft;
+}
+.tmp-bg {
+	background-color: black;
+}
