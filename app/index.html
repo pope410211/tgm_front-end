@@ -32,10 +32,10 @@
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<nav ui-view="header"></nav>
-		<main layout="column" layout-fill >
-			<div ui-view="main" layout-wrap></div>
+		<main layout="column">
+			<div ui-view="main"></div>
 		</main>
-		<footer ui-view="footer" class="footer b2cFooter" id="footer" layout-padding></footer>
+		<footer ui-view="footer" class="footer b2cFooter" id="footer"></footer>
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
@@ -49,12 +49,9 @@
 		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="bower_components/angular-aria/angular-aria.js"></script>
 		<script src="bower_components/angular-messages/angular-messages.js"></script>
-		<script src="bower_components/angular-material/angular-material.js"></script>
 		<script src="bower_components/firebase/firebase.js"></script>
 		<script src="bower_components/angularfire/dist/angularfire.js"></script>
-		<script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
 		<script src="bower_components/ngstorage/ngStorage.js"></script>
-		<script src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -71,7 +68,6 @@
 
 		<script src="scripts/services/authService.js"></script>
 		<script src="scripts/services/database.js"></script>
-		<script src="scripts/services/colorService.js"></script>
 		<script src="scripts/services/alertService.js"></script>
 		<!-- endbuild -->
 		<!-- Facebook SDK -->

@@ -18,15 +18,11 @@
 			'ngSanitize',
 			'ngTouch',
 			'ui.router',
-			'ngMaterial',
 			'ngMessages',
-			'ngMdIcons',
 			'ngStorage',
-			'md.data.table',
 			'firebase',
 			'FireAuth',
 			'FireData',
-			'TGMTheme',
 			'AlertNotifications'
 		])
 		.config(function ($stateProvider, $urlRouterProvider) {
