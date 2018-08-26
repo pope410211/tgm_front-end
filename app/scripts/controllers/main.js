@@ -3,7 +3,7 @@
 
 	angular
 		.module('ngTgmApp')
-		.controller('MainCtrl', function ($interval, $) {
+		.controller('MainCtrl', function () {
 
 		});
 }());
