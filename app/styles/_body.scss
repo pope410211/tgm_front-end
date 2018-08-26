@@ -1,0 +1,64 @@
+.content {
+	color: $tgm-tr-cl;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: $lrg-scr) {
+		font-size: 18pt;
+	}
+
+	.welcome, .about{
+		text-align: center;
+		padding-top: 2rem;
+	}
+	.welcome-img{
+		width: 75%;
+		@media (min-width: $lrg-scr) {
+			width: 100%;
+		}
+	}
+
+	.about {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+		padding-top: 2.5rem;
+		padding-bottom: 2.55rem;
+		@media (min-width: $lrg-scr) {
+			flex-direction: row;
+		}
+		.about-img{
+			width: 50%;
+			margin: 0 auto;
+			@media (min-width: $lrg-scr) {
+				width: 100%;
+			}
+		}
+		.flex-col {
+			display: flex;
+			flex-direction: column;
+		}
+		.col-show {
+			@media (min-width: $lrg-scr) {
+				padding-right: 30rem;
+			}
+			.slideshow {
+
+				position: relative;
+				> div {
+					position: absolute;
+					img {
+						width: 24.5rem;
+					}
+				}
+			}
+		}
+		.col-about-content {
+			@media (min-width: $lrg-scr) {
+				padding-top: 2.5rem; 
+			}
+		}
+	}
+}
