@@ -18,11 +18,15 @@ $main-ft: 'Montserrat', sans-serif;
 
 // base-classes
 body, html {
+	height: 100%;
 	margin: 0;
 	background-color: #fff;
+	display: flex;
+	flex-direction: column;
 }
 .container {
 	font: $main-ft;
+	flex: 1 0 auto;
 }
 .tmp-bg {
 	background-color: black;
