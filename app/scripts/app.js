@@ -58,7 +58,7 @@
 			.state('login', {
 				url:'/vendor-login',
 				views: {
-					'header': headerObj,
+					'header': loginHeaderObj,
 					'main': {
 						templateUrl: 'views/admin/login.html',
 						controller: 'LoginCtrl',
@@ -76,7 +76,7 @@
 						controller: 'VendorCtrl',
 						controllerAs: 'vendor'
 					},
-					'footer': {}
+					'footer': {footerObj}
 				}
 			});
 			// .state('adminSales', {

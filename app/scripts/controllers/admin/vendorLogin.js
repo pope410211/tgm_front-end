@@ -3,7 +3,7 @@
 
 	angular
 		.module('ngTgmApp')
-		.controller('LoginCtrl', function(fireAuthService, fireDataService, alertService, $state, $sessionStorage, $mdDialog) {
+		.controller('LoginCtrl', function(fireAuthService, fireDataService, $state, $sessionStorage) {
 			var fireAuth = fireAuthService;
 			var fireData = fireDataService;
 			var storage = $sessionStorage;
@@ -67,14 +67,14 @@
 			};
 
 			this.close = function() {
-				$mdDialog.hide();
+				// $mdDialog.hide();
 			};
 
 			this.sendResetEmail = function(email) {
 				console.log('email', email);
 				fireAuth.sendPasswordReset(email).then(function(emailRes) {
 					console.log('emailRs', emailRes);
-					$mdDialog.hide();
+					// $mdDialog.hide();
 					alertService.toast('Reset Password Email Sent', 'toast-success');
 					console.log('email Sent', emailRes);
 				}).catch(function(err) {

@@ -4,6 +4,7 @@
 	angular
 		.module('ngTgmApp')
 		.controller('HeaderCtrl', function ($state, $location, $anchorScroll, fireAuthService) {
+			this.userLoggedIn = true;
 
 			this.scrollTo = function(loc) {
 				$location.hash(loc);
