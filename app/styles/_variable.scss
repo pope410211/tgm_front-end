@@ -15,7 +15,17 @@ $xtra-lr-scr: 1200px;
 $main-ft: 'Montserrat', sans-serif;
 
 // @mixins:
-
+@mixin buttons($colorb, $colorh) {
+	color: #fff;
+	background-color: $colorb;
+	border: none;
+	width: 100px;
+	height: 40px;
+	&:hover {
+		background-color: $colorh;
+		cursor: pointer;
+	}
+}
 // base-classes
 body, html {
 	height: 100%;

@@ -1,36 +1,50 @@
-<section class="tgm-g tgm" layout-fill flex>
-	<div ng-if="login.loading" class="loading-overlay" layout="row" layout-sm="column" layout-align="space-around">
-		<md-progress-circular class="md-warn md-hue-2" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+<!-- <section class="login">
+	<h1>Welcome Vendors</h1>
+	<form name="loginForm" class="login-form">
+		<div class="form-group">
+			<label>Email Address: </label>
+			<input ng-model="login.email" class="input-control" type="email" placeholder="email@zzz.com" aria-placeholder="email@zzz.com" aria-labelledby="Login Email" />
+			<label>Password: </label>
+			<input ng-model="login.password" class="input-control" type="email" aria-labelledby="Login Password" />
+		</div>
+		<button>Login</button>
+	</form>
+	
+</section> -->
+
+<!-- <section class="login">
+	<h1>Welcome Vendors</h1>
+	<form class="form-group" name="loginForm">
+		<div class="input-group">
+			<label class="form-label">Email: </label><br />
+			<input class="form-input" type="email" ng-model="login.email" placeholder="email@zzz.com" aria-placeholder="email@zzz.com" aria-labelledby="Login Email" />
+		</div>
+		<div class="input-group">
+			<label class="form-label">Password:</label><br/>
+			<input class="form-input" type="password" ng-model="login.password" />
+		</div>
+	</form>
+	<div class="form-actions">
+		<button class="login-btn">Login</button>
 	</div>
-	<br />
-	<div class="md-whiteframe-12dp login-card" layout-padding layout="column" flex-gt-sm="60" flex="100" flex-offset-gt-sm="20">
-		<h1 class="login-c-head">Welcome Vendors!</h1>
-		<md-divider layout-padding></md-divider>
-		<form name="loginForm">
-			<md-input-container class="md-icon-float md-block input-container-wh">
-				<label>Email</label>
-				<md-icon ng-md-icon icon="account_circle"></md-icon>
-				<input type="email" name="email" ng-model="login.email" required md-no-asterisk>
-				<div ng-messages="loginForm.email.$error">
-					<div ng-message="required">Please enter your email address.</div>
-				</div>
-			</md-input-container>
-			<md-input-container class="md-icon-float md-block" flex-gt-sm>
-				<label>Password</label>
-				<md-icon ng-md-icon icon="lock_outline"></md-icon>
-				<input type="password" name="password" ng-model="login.password" required md-no-asterisk minlength="6" />
-				<div class="md-caption">Please make sure your password is at least 6 characters</div>
-				<div ng-messages="loginForm.password.$error">
-					<div ng-message-exp="['required', 'minlength']">
-						Please enter your password. Your password must be 6 characters in length.
-					</div>
-				</div>
-			</md-input-container>
-		</form>
-		<section layout="row" flex>
-				<md-button class="md-raised md-primary br-clr-wh" ng-click="login.forgotPass(login.email)">Forgot Password?</md-button>
-				<span flex></span>
-				<md-button class="md-raised md-primary br-clr-wh" ng-click="login.loginUser(login.email,login.password)" ng-disabled="isDisabled  || loginForm.$invalid">Login <md-icon class="br-clr-wh" ng-md-icon icon="login"></md-icon></md-button>
-		</section>
-	</div>
-</section>
+</section> -->
+
+
+<div class="login">
+	<form>
+		<h1>
+			Welcome Vendors
+		</h1>
+		<div class="form-content">
+			<input ng-model="login.email" name="Email" placeholder="your@email.com" type="email" />
+			<input ng-model="login.password" name="password" placeholder="password" type="password" /><br />
+			<div class="button" ng-click="login.loginUser(login.email, login.password)">
+				Login
+			</div>
+			<br />
+			<div class="signup-message">
+				<a href="#">Forgot your password?</a>
+			</div>
+		</div>
+	</form>
+</div>
