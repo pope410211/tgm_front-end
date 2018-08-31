@@ -41,21 +41,7 @@
 			display: flex;
 			flex-direction: column;
 		}
-		.col-show {
-			@media (min-width: $lrg-scr) {
-				padding-right: 30rem;
-			}
-			.slideshow {
 
-				position: relative;
-				> div {
-					position: absolute;
-					img {
-						width: 24.5rem;
-					}
-				}
-			}
-		}
 		.col-about-content {
 			@media (min-width: $lrg-scr) {
 				padding-top: 2.5rem; 
@@ -155,6 +141,52 @@
 
 /* END: VENDOR LOGIN SCSS */
 
+/* START: CAROUSEL SCSS */
+.carousel {
+	position: relative;
+	@media (min-width: $lrg-scr) {
+		padding-right: 30rem;
+	}
+	.slide {
+		position: absolute;
+		// top: 0;
+		// left: 0;
+		box-shadow: 0px 0px 15px #999;
 
+		img {
+			width: 24.5rem;
+		}
+	}
+
+	.arrows {
+		position: absolute;
+		top: 10px;
+		right: 20px;
+	}
+
+	.arrows img {
+		height: 32px;
+	}
+
+	.slide.ng-hide-add,
+	.slide.ng-hide-remove {
+		-webkit-transition: all linear 0.5s;
+		-moz-transition: all linear 0.5s;
+		-o-transition: all linear 0.5s;
+		transition: all linear 0.5s;
+		display: block!important;
+	}
+
+	.slide.ng-hide-add.ng-hide-add-active,
+	.slide.ng-hide-remove {
+		opacity: 0;
+	}
+
+	.slide.ng-hide-add,
+	.slide.ng-hide-remove.ng-hide-remove-active {
+		opacity: 1;
+	}
+}
+/* END: CAROUSEL SCSS */
 
 

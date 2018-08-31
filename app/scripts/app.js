@@ -22,7 +22,8 @@
 			'firebase',
 			'FireAuth',
 			'FireData',
-			'AlertNotifications'
+			'AlertNotifications',
+			'carouselApp'
 		])
 		.config(function ($stateProvider, $urlRouterProvider) {
 			var headerObj = {
