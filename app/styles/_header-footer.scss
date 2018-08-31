@@ -61,9 +61,9 @@
 
 					&:hover {
 						img {
-							width: 4rem;
-							clear: both;
-							transform: scale(1,1)
+							// box-shadow: 0px 6px 10px rgba(146,211,207, 1);
+							transform: translateY(-4px);
+							// border-radius: 1px;
 						}
 					}
 				}
