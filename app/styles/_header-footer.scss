@@ -25,7 +25,9 @@
 		.nav-links {
 			list-style-type: none;
 			display: inline-flex;
-
+			@media (max-width: $lrg-scr) {
+				padding: 0;
+			}
 			li {
 				padding: 1rem;
 				a {
@@ -44,6 +46,9 @@
 			list-style: none;
 			display: inline-flex;
 			vertical-align: middle;
+			@media (max-width: $lrg-scr) {
+				padding: .05rem;
+			}
 			li {
 				padding-right: 1.5rem;
 				@media (min-width: $lrg-scr) {
