@@ -11,7 +11,7 @@
                 scope: {
                     images: "="
                 },
-                link: function(scope, elem, attrs) {
+                link: function(scope) {
                     scope.currentIndex = 0;
 
                     /* Start: arrow/click to change images */
@@ -40,13 +40,15 @@
 
                     var sliderFunc = function() {
                         timer = $timeout(function() {
-                            timer = $timeout(sliderFunc, 5000);
-                        }, 5000);
+							scope.next();
+                            timer = $timeout(sliderFunc, 3000);
+                        }, 3000);
                     };
 
                     sliderFunc();
 
                     scope.$on('$destroy', function() {
+
                         $timeout.cancel(timer);
                     });
                     /* End: Automatic Transitions */
