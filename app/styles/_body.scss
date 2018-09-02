@@ -148,23 +148,40 @@
 		padding-right: 30rem;
 	}
 	.slide {
-		position: absolute;
 
 		img {
+			position: absolute;
 			width: 24.5rem;
 			box-shadow: 0px 0px 15px #999;
+			z-index: 10;
 		}
 	}
 
 	.arrows {
 		position: absolute;
-		top: 10px;
-		right: 20px;
+		z-index: 1000;
+		cursor: pointer;
+		height: 100%;
+		width: 40%;
 	}
 
-	.arrows img {
-		height: 32px;
+	.arrows-left {
+		background-color: red;
+
+		&:hover:after {
+			content: '<';
+			color: #fff;
+			font-size: 10rem;
+			top: 100px;
+
+		}
 	}
+	.arrows-right {
+
+		background-color: green;
+		right: 5.5rem;
+	}
+
 
 	.slide.ng-hide-add,
 	.slide.ng-hide-remove {
