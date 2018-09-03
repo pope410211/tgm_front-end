@@ -22,7 +22,7 @@
 	}
 
 	.about {
-		display: flex;
+		@include flexDisplay;
 		flex-direction: column-reverse;
 		justify-content: center;
 		padding-top: 2.5rem;
@@ -54,11 +54,7 @@
 
 /* BEGIN: VENDOR LOGIN SCSS */
 .login {
-	display: flex;
-	-webkit-display: box;
-	-moz-display: box;
-	-ms-display: flexbox;
-	-webkit-display: flex;
+	@include flexDisplay;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
@@ -88,14 +84,14 @@
 		padding: 2em;
 		padding-bottom: 3em;
 		border-radius: 8x;
-		display: flex;
+		@include flexDisplay;
 		flex-wrap: wrap;
 		flex-direction: column;
 		justify-content: center;
 		box-shadow: 0 10px 40px -14px rgba(0,0,0,0.25);
 
 		.form-content {
-			display: flex;
+			@include flexDisplay;
 			flex-wrap: wrap;
 			flex-direction: column;
 
@@ -127,8 +123,8 @@
 				margin-bottom: 1em;
 				cursor: pointer;
 				overflow: hidden;
-				transition: all 200ms ease-in-out;
 				box-shadow: 0px 2px 6px rgba(0,0,0,0.03);
+				@include transitions(all, ease-in-out, 200ms);
 				&:hover {
 					box-shadow: 0px 6px 10px rgba(0,0,0,0.03);
 					transform: translateY(-4px)
@@ -163,32 +159,33 @@
 		cursor: pointer;
 		height: 100%;
 		width: 40%;
+		font-size: 5rem;
+
+		&:hover {
+			background-color:rgba(248, 237, 219, .5);
+		}
 	}
 
 	.arrows-left {
-		background-color: red;
 
 		&:hover:after {
-			content: '<';
-			color: #fff;
-			font-size: 10rem;
-			top: 100px;
-
+			@include carouselBtn('<');
+			left: .5rem;
 		}
 	}
 	.arrows-right {
-
-		background-color: green;
 		right: 5.5rem;
+
+		&:hover:after {
+			@include carouselBtn('>');
+			right: .5rem;
+		}
 	}
 
-
+	// Carousel Animation
 	.slide.ng-hide-add,
 	.slide.ng-hide-remove {
-		-webkit-transition: all linear 0.5s;
-		-moz-transition: all linear 0.5s;
-		-o-transition: all linear 0.5s;
-		transition: all linear 0.5s;
+		@include transitions(all, linear, 0.5s);
 		display: block!important;
 	}
 

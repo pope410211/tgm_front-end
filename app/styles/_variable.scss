@@ -15,6 +15,14 @@ $xtra-lr-scr: 1200px;
 $main-ft: 'Montserrat', sans-serif;
 
 // @mixins:
+
+@mixin flexDisplay {
+	display: flex;
+	-webkit-display: box;
+	-moz-display: box;
+	-ms-display: flexbox;
+	-webkit-display: flex;
+}
 @mixin buttons($colorb, $colorh) {
 	color: #fff;
 	background-color: $colorb;
@@ -26,6 +34,21 @@ $main-ft: 'Montserrat', sans-serif;
 		cursor: pointer;
 	}
 }
+
+@mixin carouselBtn($cont) {
+	content: $cont;
+	color:$tgm-trlt-cl;
+	position: absolute;
+	top: 5rem;
+}
+
+@mixin transitions($prop, $time, $delay) {
+	-webkit-transition: $prop $time $delay;
+	-moz-transition: $prop $time $delay;
+	-o-transition: $prop $time $delay;
+	transition: $prop $time $delay;
+}
+
 // base-classes
 body, html {
 	height: 100%;
