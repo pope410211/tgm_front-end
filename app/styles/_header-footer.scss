@@ -9,7 +9,7 @@
 	width: 100vw;
 
 	// Flexbox
-	display: flex;
+	@include flexDisplay;
 	justify-content: center;
 
 	text-align: center;
@@ -61,9 +61,7 @@
 
 					&:hover {
 						img {
-							// box-shadow: 0px 6px 10px rgba(146,211,207, 1);
 							transform: translateY(-4px);
-							// border-radius: 1px;
 						}
 					}
 				}
@@ -77,7 +75,6 @@
 /* BEGIN: FOOTER SCSS */
 
 .footer {
-	text-align: center;
 	flex-shrink: 0;
 	margin-top: 20rem;
 	@media (min-width: $lrg-scr) {
@@ -92,11 +89,45 @@
 		color: #fff;
 		padding-top: 2px;
 		padding-bottom: 2px;
+		text-align: center;
+
+		#store-ph {
+			color: inherit;
+			text-decoration: none;
+			
+		}
 	}
 
 	.copy {
 		padding: 1rem;
+		padding-bottom: 0;
 		color: $tgm-tr-cl;
+		text-align: center;
+
+		.cpy:before {
+			content: '\a9 \20';
+		}
+	}
+
+	.site {
+		text-align: center;
+
+		.web-by {
+			font-size: 8pt;
+			text-decoration: none;
+			color: $tgm-tr-cl;
+			margin-bottom: .5rem;
+			border-bottom: .2rem solid transparent;
+			@include transitions(all, ease-in-out, 0.5s);
+	
+			&:hover {
+				transform: translateY(-4px); 
+				font-style: italic;
+				border-color: $tgm-trlt-cl;
+				// text-decoration: underline solid $tgm-trlt-cl;
+				
+			}
+		}
 	}
 }
 /* END: FOOTER SCSS */
