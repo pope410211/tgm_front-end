@@ -1,53 +1,172 @@
-// Header Styles
-#b2c-header {
-	position: fixed;
-	background-color: rgba(58,119,127, 0.5);
-}
+/* BEGIN: HEADER SCSS */
+.hero-img {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../images/hero-img.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	// background-position: center center;
+	height: 100vh;
+	width: 100vw;
 
-.b2cLinkList {
-	.b2cLinkItem {
-		.b2cLink {
-			color: $brand-white;
+	@media (max-width: $sml-scr) {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../images/mobile-hero-img.jpg");
+	}
+
+	// Flexbox
+	@include flexDisplay;
+	justify-content: center;
+
+	text-align: center;
+	.hero-nav {
+		color: #fff;
+		padding-top: 2rem;
+		align-items: center;
+		.logo {
+			width: 10rem;
+			vertical-align: middle;
+		}
+
+		.nav-links {
+			list-style-type: none;
+			display: inline-flex;
+			@media (max-width: $lrg-scr) {
+				padding: 0;
+			}
+			li {
+				padding: 1rem;
+				a {
+					color: #fff;
+					text-decoration: none;
+	
+					&:hover {
+						color: $tgm-trlt-cl;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		.nav-icons {
+			list-style: none;
+			display: inline-flex;
+			vertical-align: middle;
+			@media (max-width: $lrg-scr) {
+				padding: .05rem;
+				padding-left: 2rem;
+			}
+			li {
+				padding-right: 1.5rem;
+				@media (min-width: $lrg-scr) {
+					padding-right: 1rem;
+				}
+				a {
+					img {
+						width: 2rem;
+					}
+
+					&:hover {
+						img {
+							transform: translateY(-4px);
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+/* END: HEADER SCSS */
+
+/* BEGIN: FOOTER SCSS */
+
+.footer {
+	flex-shrink: 0;
+	margin-top: 2rem;
+	@media (min-width: $lrg-scr) {
+		margin-top: 5rem;
+	}
+	.break {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+	.company {
+		background-color: $tgm-tr-cl;
+		color: #fff;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		text-align: center;
+
+		#store-ph {
+			color: inherit;
+			text-decoration: none;
+			
+		}
+	}
+
+	.copy {
+		padding: 1rem;
+		padding-bottom: 0;
+		color: $tgm-tr-cl;
+		text-align: center;
+
+		.cpy:before {
+			content: '\a9 \20';
+		}
+	}
+
+	.site {
+		text-align: center;
+
+		.web-by {
+			font-size: 8pt;
+			text-decoration: none;
+			color: $tgm-tr-cl;
+			margin-bottom: .5rem;
+			border-bottom: .2rem solid transparent;
+			@include transitions(all, ease-in-out, 0.5s);
+	
 			&:hover {
-				color: $brand-trq-drk;
-				cursor: pointer;
+				transform: translateY(-4px); 
+				font-style: italic;
+				border-color: $tgm-trlt-cl;
+				// text-decoration: underline solid $tgm-trlt-cl;
+				
 			}
 		}
 	}
 }
-// B2C Mobile
-#b2c-mobile-header {
-	position: absolute;
-	z-index: 1;
-}
-
-// ADMIN
-#b2b-header {
-	background-color: rgba(127,207,204, 0.5);
-	position: fixed;
-}
+/* END: FOOTER SCSS */
 
 
-// Footer Styles
+/* BEGIN: VENDOR HEADER SCSS */
+.vendor-header {
+	display: flex;
+	background-color: $tgm-tr-cl;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: #fff;
+	float: center;
+	align-content: center;
+	justify-content: center;
+	section {
 
-.b2cFooter {
-	background-color: $brand-beach;
-	bottom: 0px;
-	position: absolute;
-	width: 100%;
-	.footer-list {
-		list-style: none;
-		color: $brand-trq-drk;
-		.footer-link {
+		display: inline-flex;
+		.logo-vendor {
+			width: 4rem;
+			vertical-align: middle;
+		}
 
-			&:hover {
-			color: $brand-trq-lt;
-			cursor: pointer;
+		p {
+			padding-left: 3rem;
+			a {
+				padding: 3rem;
+				&:hover {
+					color: $tgm-trlt-cl;
+					cursor: pointer;
+				}
 			}
 		}
 	}
-	.logo-footer {
-		height: 5rem;
-		width: 6rem;
-	}
+
 }
+/* END: VENDOR HEADER SCSS */

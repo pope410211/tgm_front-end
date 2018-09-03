@@ -29,7 +29,7 @@
 			// };
 
 			auth.sendPasswordReset = function(email) {
-				return fireAuth.$sendPasswordResetEmail(email).then(function(res) {
+				return fireAuth.$sendPasswordResetEmail(email).then(function() {
 					return true;
 				}).catch(function(error) {
 					console.error('Auth Service Reset Password: ', error);

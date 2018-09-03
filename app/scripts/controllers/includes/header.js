@@ -10,9 +10,17 @@
 				$anchorScroll();
 			};
 
+			/*
+				TODO: Make this Dynamic by checking Firebase to verify use is logged in.
+			*/
+			if($state.current.name === 'vendorSales') {
+				this.userLoggedIn = true;
+			} else {
+				this.userLoggedIn = false;
+			}
+
 			this.signOut = function() {
-				console.log('click');
-				fireAuthService.logOut().then(function(loggedOut) {
+				fireAuthService.logOut().then(function() {
 					$state.go('home');
 				});
 			};

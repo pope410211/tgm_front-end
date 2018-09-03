@@ -2,11 +2,11 @@
 'use strict';
 	angular
 		.module('ngTgmApp')
-		.controller('VendorCtrl', function($state, fireDataService, $sessionStorage) {
+		.controller('VendorCtrl', function($state, $scope, fireDataService, $sessionStorage) {
 			var userInfo = $sessionStorage.user;
 			var self = this;
 			this.loading = true;
-			this.authed = false;
+			this.authedAdmin = false;
 
 			console.log('user', userInfo);
 			/*
@@ -14,7 +14,7 @@
 			*/
 			if (typeof userInfo !== 'undefined') {
 				if (userInfo.roles.admin) {
-					this.authed = true;
+					this.authedAdmin = true;
 					this.vendorSku = userInfo.sku[0];
 					this.selectedSku = userInfo.sku[0];
 					this.vendorSkuArray = userInfo.sku;
@@ -29,7 +29,7 @@
 					limit: 10,
 					page: 1
 				};
-				console.log('this', this.vendorSku);
+
 				fireDataService.getVendorSale(this.vendorSku).then(function(salesRes) {
 					self.vendorSales = salesRes;
 	
@@ -45,12 +45,12 @@
 					}
 					self.loading = false;
 				}).catch(function(error) {
-					console.log('error', error);
+					console.error('error', error);
 				});
 
 				this.getVendSales = function(vendSku) {
-					this.vendorSku = vendSku;
 					console.log('vend', vendSku);
+					this.vendorSku = vendSku;
 					fireDataService.getVendorSale(vendSku).then(function(salesRes) {
 						self.vendorSales = salesRes;
 		
