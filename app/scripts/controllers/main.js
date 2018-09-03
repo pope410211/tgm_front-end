@@ -20,13 +20,13 @@
 				},
 				{
 					name: 'Slideshow5.jpg'
-				},
-				{
-					name: 'Slideshow6.jpg'
-				},
-				{
-					name: 'Slideshow7.jpg'
 				}
+				// {
+				// 	name: 'Slideshow6.jpg'
+				// },
+				// {
+				// 	name: 'Slideshow7.jpg'
+				// }
 			];
 		});
 }());
