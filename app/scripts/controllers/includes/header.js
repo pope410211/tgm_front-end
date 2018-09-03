@@ -4,7 +4,6 @@
 	angular
 		.module('ngTgmApp')
 		.controller('HeaderCtrl', function ($state, $location, $anchorScroll, fireAuthService) {
-			this.userLoggedIn = true;
 
 			this.scrollTo = function(loc) {
 				$location.hash(loc);
@@ -12,8 +11,7 @@
 			};
 
 			this.signOut = function() {
-				console.log('click');
-				fireAuthService.logOut().then(function(loggedOut) {
+				fireAuthService.logOut().then(function() {
 					$state.go('home');
 				});
 			};
