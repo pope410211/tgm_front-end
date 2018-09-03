@@ -22,32 +22,39 @@
 	}
 
 	.about {
-		@include flexDisplay;
-		flex-direction: column-reverse;
-		justify-content: center;
-		padding-top: 2.5rem;
-		padding-bottom: 2.55rem;
 		@media (min-width: $lrg-scr) {
-			flex-direction: row;
+			// margin-bottom: 15rem;
 		}
+
+		/*
+		*** Commented out due to client requested changes ***
+			@include flexDisplay;
+			flex-direction: column-reverse;
+			justify-content: center;
+			padding-top: 2.5rem;
+			padding-bottom: 2.55rem;
+			@media (min-width: $lrg-scr) {
+				flex-direction: row;
+			}
+		*/
 		.about-img{
 			width: 50%;
-			margin: 0 auto;
+			// margin: 0 auto;
 			@media (min-width: $lrg-scr) {
 				width: 100%;
 			}
 		}
-		.flex-col {
-			display: flex;
-			flex-direction: column;
-		}
+		// .flex-col {
+		// 	display: flex;
+		// 	flex-direction: column;
+		// }
 
-		.col-about-content {
-			@media (min-width: $lrg-scr) {
-				padding-top: 2.5rem; 
-				font-size: 16pt;
-			}
-		}
+		// .col-about-content {
+		// 	@media (min-width: $lrg-scr) {
+		// 		padding-top: 2.5rem; 
+		// 		font-size: 16pt;
+		// 	}
+		// }
 	}
 }
 /* END: MAIN PAGE SCSS */

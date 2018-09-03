@@ -1,8 +1,11 @@
 /* START: CAROUSEL SCSS */
 .carousel {
 	position: relative;
+	padding-right: 24.5rem;
+	padding-bottom: 17.5rem;
+
 	@media (min-width: $lrg-scr) {
-		padding-right: 30rem;
+		padding-right: 27rem;
 	}
 	.slide {
 
@@ -28,18 +31,22 @@
 	}
 
 	.arrows-left {
-
 		&:hover:after {
 			@include carouselBtn('<');
 			left: .5rem;
 		}
 	}
 	.arrows-right {
-		right: 5.5rem;
+		z-index: 9999;
+		left: 15rem;
 
 		&:hover:after {
 			@include carouselBtn('>');
 			right: .5rem;
+		}
+
+		@media (min-width: $lrg-scr) {
+			left: 13.7rem;
 		}
 	}
 
