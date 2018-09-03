@@ -8,11 +8,10 @@
 			var fireData = fireDataService;
 			var storage = $sessionStorage;
 			var self = this;
-			this.loading = false;
-
+			this.loader = false;
 
 			this.loginUser = function(email, password) {
-				self.loading = true;
+				self.loader = true;
 				fireAuth.login(email,password).then(function(loginRes) {
 					try {
 						if (typeof loginRes.email !== 'undefined') {
@@ -35,27 +34,27 @@
 						} else {
 							var title = 'Authentication Error';
 							var message = '<b>Code: </b>' + loginRes.code + '<br /> <b>Message: </b>' + loginRes.message;
-							alertService.displayDialog(title, message, 'error');
-							self.loading = false;
+							alert(title + '\n' + message);
+							self.loader = false;
 						}
 					} catch(e) {
 						console.error('LoginCtrl | Login Error: ', e);
 						var title = 'Authentication Error';
 						var message = '<b>Code: </b>' + e.code + '<br /> <b>Message: </b>' + e.message;
-						alertService.displayDialog(title, message, 'error');
-						self.loading = false;
+						alert(title + '\n' + message);
+						self.loader = false;
 					}
 				}).catch(function(error) {
 					try {
 						var title = 'Authentication Error';
 						var message = '<b>Code: </b>'+ error.code + ' <br />  <b>Message: </b>' + error.message;
-						alertService.displayDialog(title, message, 'error');
-						self.loading = false;
+						alert(title + '\n' + message);
+						self.loader = false;
 					} catch(e) {
 						var title = 'Authentication Error';
 						var message = '<b>Code: </b> <br />  <b>Message: </b> There was error logging in.<br />Please close your browser and try again.<br />If problem persists, contact Turtle Girls Market';
-						alertService.displayDialog(title, message, 'error');
-						self.loading = false;
+						alert(title + '\n' + message);
+						self.loader = false;
 					}
 				});
 			};
@@ -71,12 +70,9 @@
 			};
 
 			this.sendResetEmail = function(email) {
-				console.log('email', email);
 				fireAuth.sendPasswordReset(email).then(function(emailRes) {
-					console.log('emailRs', emailRes);
-					// $mdDialog.hide();
-					alertService.toast('Reset Password Email Sent', 'toast-success');
-					console.log('email Sent', emailRes);
+					// console.log('emailRs', emailRes);
+					alert('Password Reset');
 				}).catch(function(err) {
 					console.error('LoginCtrl | SendResetEmail: ', err);
 				});
