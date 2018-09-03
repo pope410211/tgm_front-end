@@ -132,8 +132,111 @@
 		}
 	}
 }
-
-
 /* END: VENDOR LOGIN SCSS */
+
+/* BEGIN: VENDOR SALES SCSS */
+.vendor-sales {
+	@include flexDisplay;
+	@include flexDirection(column);
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	margin: 0;
+	padding: 6%;
+
+	.itemized-sales {
+
+		.vendor-table {
+			background-color: $sand-cl;
+			padding: 1rem;
+			box-shadow: 0 10px 40px -14px rgba(0,0,0,0.25);
+			width: 100%;
+			border-collapse: collapse;
+			@media (min-width: $lrg-scr) {
+				width: 40rem;
+			}
+
+			thead {
+				text-align: center;
+				color: #fff;
+				background-color: $tgm-tr-cl;
+				padding-bottom: 1rem;
+
+				th[title=Date] {
+					&:before {
+						content: 'Date';
+					}
+
+					@media (min-width: $lrg-scr) {
+						&:before {
+							content: 'Date of Sale';
+						}
+					}
+				}
+
+				th[title=Sku] {
+					display: none;
+					@media (min-width: $lrg-scr){
+						display: block;
+						&:before {
+							content: 'SKU';
+						}
+					}
+				}
+
+				th[title=Item] {
+					&:before {
+						content: 'Item';
+					}
+				}
+				th[title=Qty] {
+					&:before {
+						content: 'Qty';
+					}
+				}
+				th[title=Price] {
+					&:before {
+						content: '$';
+					}
+					@media (min-width: $lrg-scr) {
+						&:before {
+							content: 'Price';
+						}
+					}
+				}
+			} // End thead
+
+			tbody {
+
+				.sku {
+					display: none;
+
+					@media (min-width: $lrg-scr) {
+						display: block;
+					}
+				}
+				tr:nth-child(even) {
+					background-color: $tgm-trlt-cl;
+					color: #fff;
+				}
+			}
+
+			tfoot {
+				padding-top: 10rem;
+				text-align: right;
+				tr {
+					border-bottom: 2px solid $tgm-tr-cl;
+				}
+			}
+			.currency {
+				text-align: right;
+			}
+			.center {
+				text-align: center;
+			}
+		}
+	}
+}
+/* END: VENDOR SALES SCSS */
 
 

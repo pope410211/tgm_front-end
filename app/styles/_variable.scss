@@ -23,6 +23,11 @@ $main-ft: 'Montserrat', sans-serif;
 	-ms-display: flexbox;
 	-webkit-display: flex;
 }
+
+@mixin flexDirection($direction) {
+	flex-direction: $direction;
+	-ms-flex-direction: $direction;
+}
 @mixin buttons($colorb, $colorh) {
 	color: #fff;
 	background-color: $colorb;
@@ -48,6 +53,19 @@ $main-ft: 'Montserrat', sans-serif;
 	-o-transition: $prop $time $delay;
 	transition: $prop $time $delay;
 }
+@mixin animations($animations) {
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin loadBorder($size) {
+	border: $size solid $tgm-trlt-cl;
+	border-radius: 50%;
+	border-top: $size solid $tgm-tr-cl;
+	border-bottom: $size solid $tgm-tr-cl;
+}
 
 // base-classes
 body, html {
@@ -66,3 +84,52 @@ body, html {
 .tmp-bg {
 	background-color: black;
 }
+
+/* Begin: Loader Class */
+
+
+// Needs work. TODO: Retrun at a later date and cleanup.
+.loader-block {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(248, 237, 219, .5);
+	// padding-top: 25%;
+	z-index: 9999;
+	// margin-bottom: 7rem;
+	// margin-top: -7rem;
+	overflow: hidden;
+
+	.loader {
+		margin: 0 auto;
+		width: 4rem;
+		height: 4rem;
+		@include loadBorder(.5rem);
+		@include animations(spin 2s linear infinite);
+	
+		@media (min-width: $lrg-scr) {
+			@include loadBorder(.75rem);
+			width: 6rem;
+			height: 6rem;
+		}
+	}
+	
+	@keyframes spin {
+		0% {transform: rotate(0deg);}
+		100% { transform: rotate(360deg);}
+	}
+	@-webkit-keyframes spin {
+		0% {-webkit-transform: rotate(0deg);}
+		100% {-webkit-transform: rotate(360deg);}
+	}
+	@-moz-keyframes spin {
+		0% {-moz-transform: rotate(0deg);}
+		100% {-moz-transform: rotate(360deg);}
+	}
+	@-o-keyframes spin {
+		0% {-o-transform: rotate(0deg);}
+		100% {-o-transform: rotate(360deg);}
+	}
+}
+
+/* End: Loader Class */

@@ -77,7 +77,7 @@
 						controller: 'VendorCtrl',
 						controllerAs: 'vendor'
 					},
-					'footer': {footerObj}
+					'footer': footerObj
 				}
 			});
 			// .state('adminSales', {
