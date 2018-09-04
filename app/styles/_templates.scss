@@ -8,6 +8,10 @@
 		padding-right: 27rem;
 	}
 	.slide {
+		padding-left: 1rem;
+		@media (min-width: $med-scr) {
+			padding-left: 0;
+		}
 
 		img {
 			position: absolute;
