@@ -1,53 +1,135 @@
-// Main Colors
-$brand-white: #fff;
-$brand-trq-drk: #3a777f;
-$brand-trq-lt: #7fcfcc;
-$brand-beach: #f8eddb;
 
-// Shared Classes
-.br-clr-wh {
-	color: $brand-white !important;
-	fill: $brand-white;
+
+// Colors
+$tgm-tr-cl: #598185;
+$tgm-trlt-cl: #92d3cf;
+$sand-cl: #f8eddb;
+
+// Screen sizes - Mobile First
+$sml-scr: 576px;
+$med-scr: 768px;
+$lrg-scr: 992px;
+$xtra-lr-scr: 1200px;
+
+// Font Info.
+$main-ft: 'Montserrat', sans-serif;
+
+// @mixins:
+
+@mixin flexDisplay {
+	display: flex;
+	-webkit-display: box;
+	-moz-display: box;
+	-ms-display: flexbox;
+	-webkit-display: flex;
 }
 
-.btn-tgm-primary {
-	background-color: $brand-trq-drk;
-	color: $brand-white;
-
+@mixin flexDirection($direction) {
+	flex-direction: $direction;
+	-ms-flex-direction: $direction;
+}
+@mixin buttons($colorb, $colorh) {
+	color: #fff;
+	background-color: $colorb;
+	border: none;
+	width: 100px;
+	height: 40px;
 	&:hover {
-		background-color: $brand-trq-lt;
-		color: $brand-white;
+		background-color: $colorh;
+		cursor: pointer;
 	}
 }
 
-body {
-	min-height: 100%;
-	height: auto !important;
+@mixin carouselBtn($cont) {
+	content: $cont;
+	color:$tgm-trlt-cl;
+	position: absolute;
+	top: 5rem;
+}
+
+@mixin transitions($prop, $time, $delay) {
+	-webkit-transition: $prop $time $delay;
+	-moz-transition: $prop $time $delay;
+	-o-transition: $prop $time $delay;
+	transition: $prop $time $delay;
+}
+@mixin animations($animations) {
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin loadBorder($size) {
+	border: $size solid $tgm-trlt-cl;
+	border-radius: 50%;
+	border-top: $size solid $tgm-tr-cl;
+	border-bottom: $size solid $tgm-tr-cl;
+}
+
+// base-classes
+body, html {
 	height: 100%;
-	margin: 0 auto -42px; /* the bottom margin is the negative value of the footer's height */
-	background-color: $brand-beach;
-	position: relative;
-	color: $brand-trq-drk;
+	margin: 0;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
-
-// Loader:
-.loading-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(127,207,204,0.5);
-	z-index: 2;
-	cursor: pointer;
+.container {
+	font-family: $main-ft;
+	flex: 1 0 auto;
+}
+.tmp-bg {
+	background-color: black;
 }
 
 
-// Toast Class 
+/* Begin: Loader Class */
 
-.toast-success {
-	.md-toast-content {
-		background-color: green !important;
-		color: $brand-white !important;
+// Needs work. TODO: Retrun at a later date and cleanup.
+.loader-block {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(248, 237, 219, .5);
+	// padding-top: 25%;
+	z-index: 9999;
+	// margin-bottom: 7rem;
+	// margin-top: -7rem;
+	overflow: hidden;
+
+	.loader {
+		margin: 0 auto;
+		width: 4rem;
+		height: 4rem;
+		@include loadBorder(.5rem);
+		@include animations(spin 2s linear infinite);
+	
+		@media (min-width: $lrg-scr) {
+			@include loadBorder(.75rem);
+			width: 6rem;
+			height: 6rem;
+		}
+	}
+	
+	@keyframes spin {
+		0% {transform: rotate(0deg);}
+		100% { transform: rotate(360deg);}
+	}
+	@-webkit-keyframes spin {
+		0% {-webkit-transform: rotate(0deg);}
+		100% {-webkit-transform: rotate(360deg);}
+	}
+	@-moz-keyframes spin {
+		0% {-moz-transform: rotate(0deg);}
+		100% {-moz-transform: rotate(360deg);}
+	}
+	@-o-keyframes spin {
+		0% {-o-transform: rotate(0deg);}
+		100% {-o-transform: rotate(360deg);}
 	}
 }
+
+/* End: Loader Class */

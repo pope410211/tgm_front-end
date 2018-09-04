@@ -1,0 +1,327 @@
+/* BEGIN: MAIN PAGE SCSS */
+.content {
+	color: $tgm-tr-cl;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: $lrg-scr) {
+		font-size: 18pt;
+	}
+
+	.welcome, .about{
+		text-align: center;
+		padding-top: 2rem;
+	}
+	.welcome-img{
+		width: 75%;
+		@media (min-width: $lrg-scr) {
+			width: 100%;
+		}
+	}
+
+	.about {
+		@media (min-width: $lrg-scr) {
+			// margin-bottom: 15rem;
+		}
+
+		/*
+		*** Commented out due to client requested changes ***
+			@include flexDisplay;
+			flex-direction: column-reverse;
+			justify-content: center;
+			padding-top: 2.5rem;
+			padding-bottom: 2.55rem;
+			@media (min-width: $lrg-scr) {
+				flex-direction: row;
+			}
+		*/
+		.about-img{
+			width: 50%;
+			// margin: 0 auto;
+			@media (min-width: $lrg-scr) {
+				width: 100%;
+			}
+		}
+		// .flex-col {
+		// 	display: flex;
+		// 	flex-direction: column;
+		// }
+
+		// .col-about-content {
+		// 	@media (min-width: $lrg-scr) {
+		// 		padding-top: 2.5rem; 
+		// 		font-size: 16pt;
+		// 	}
+		// }
+	}
+}
+/* END: MAIN PAGE SCSS */
+
+/* BEGIN: VENDOR LOGIN SCSS */
+.login {
+	@include flexDisplay;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	padding: 6%;
+	margin: 0;
+
+	h1 {
+		font-weight: 700;
+		color: $tgm-tr-cl;
+		text-align: center;
+		line-height: 1.5rem;
+		margin-bottom: 1.2rem;
+		margin-top: 0.2rem;
+	}
+
+	a {
+		font-size: 0.98rem;
+		color: $tgm-tr-cl;
+		text-decoration: none;
+		&:hover {
+			color: $tgm-trlt-cl;
+		}
+	}
+
+	form {
+		background-color: $sand-cl;
+		padding: 2em 3rem 3em 2em;
+		border-radius: 8x;
+		@include flexDisplay;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		box-shadow: 0 10px 40px -14px rgba(0,0,0,0.25);
+
+		.form-content {
+			@include flexDisplay;
+			flex-wrap: wrap;
+			flex-direction: column;
+
+			input {
+				color: $tgm-tr-cl;
+				background-color: #fff;
+				box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+				border: none;
+				border-radius: 4px;
+				padding: 1em;
+				margin-bottom: 1.2em;
+				width: 100%;
+				&:focus {
+					outline: none;
+				} 
+			}
+
+			.button {
+				font-weight: 600;
+				text-align: center;
+				font-size: 19px;
+				color: #fff;
+				background-color: $tgm-tr-cl;
+				width: 98%;
+				border: none;
+				border-radius: 4px;
+				padding: 0.8em;
+				margin-top: 1em;
+				margin-bottom: 1em;
+				cursor: pointer;
+				overflow: hidden;
+				box-shadow: 0px 2px 6px rgba(0,0,0,0.03);
+				@include transitions(all, ease-in-out, 200ms);
+				&:hover {
+					box-shadow: 0px 6px 10px rgba(0,0,0,0.03);
+					transform: translateY(-4px)
+				}
+			}
+		}
+	}
+}
+/* END: VENDOR LOGIN SCSS */
+
+/* BEGIN: VENDOR SALES SCSS */
+.vendor-sales {
+	@include flexDisplay;
+	@include flexDirection(column);
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	margin: 0;
+	padding: 6%;
+
+	.itemized-sales {
+
+		.vendor-table {
+			background-color: $sand-cl;
+			box-shadow: 0 10px 40px -14px rgba(0,0,0,0.25);
+			width: 100%;
+			border-collapse: collapse;
+
+			@media (min-width: $lrg-scr) {
+				width: 40rem;
+			}
+
+			thead {
+				text-align: center;
+				color: #fff;
+				background-color: $tgm-tr-cl;
+				padding-bottom: 1rem;
+
+				th {
+					padding-bottom: .5rem;
+					padding-top: .5rem;
+				}
+
+				th[title=Date] {
+					&:before {
+						content: 'Date';
+					}
+
+					@media (min-width: $lrg-scr) {
+						&:before {
+							content: 'Date of Sale';
+						}
+					}
+				}
+
+				th[title=Sku] {
+					display: none;
+					@media (min-width: $lrg-scr){
+						display: block;
+						&:before {
+							content: 'SKU';
+						}
+					}
+				}
+
+				th[title=Item] {
+					&:before {
+						content: 'Item';
+					}
+				}
+				th[title=Qty] {
+					&:before {
+						content: 'Qty';
+					}
+				}
+				th[title=Price] {
+					&:before {
+						content: '$';
+					}
+					@media (min-width: $lrg-scr) {
+						&:before {
+							content: 'Price';
+						}
+					}
+				}
+			} // End thead
+
+			tbody {
+				td {
+					border: 1px solid $tgm-tr-cl;
+				}
+
+				tr:first-child td {
+					border-top: 0;
+				}
+
+				tr td:first-child {
+					border-left: 0;
+					padding-left: .5rem;
+				}
+
+				tr td:last-child {
+					border-right: 0;
+					padding-right: .5rem;
+				}
+
+				.sku {
+					display: none;
+
+					@media (min-width: $lrg-scr) {
+						display: block;
+					}
+				}
+				tr:nth-child(even) {
+					background-color: $tgm-trlt-cl;
+					color: #fff;
+				}
+			}
+
+			tfoot {
+				padding-top: 10rem;
+				text-align: right;
+				tr {
+					border-bottom: 2px solid $tgm-tr-cl;
+
+					td:last-child {
+						padding-right: .5rem;
+					}
+					.show-sm {
+
+						@media (min-width: $lrg-scr) {
+							display: none;
+						}
+					}
+					
+					.hide-sm {
+						display: none;
+					
+						@media (min-width: $lrg-scr) {
+							display: table-cell;
+						}
+					}
+				}
+			}
+			.currency {
+				text-align: right;
+			}
+			.center {
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+/* BEGIN: SELECT BOX */
+
+.vendor-selection {
+	margin-bottom: .5rem;
+	.selector {
+		background-color: $tgm-trlt-cl;
+		display: inline-block;
+		color: #fff;
+		line-height: 1.5em;
+		padding: 0.5em 3.5em 0.5em 1em;
+		font: inherit;
+		border: none;
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		background-image:
+			linear-gradient(45deg, transparent 50%, #fff 50%),
+			linear-gradient(135deg, #fff 50%, transparent 50%),
+			linear-gradient(to right, $tgm-tr-cl, $tgm-tr-cl);
+		background-position:
+			calc(100% - 20px) calc(1em + 2px),
+			calc(100% - 15px) calc(1em + 2px),
+			100% 0;
+		background-size:
+			5px 5px,
+			5px 5px,
+			2.5em 2.5em;
+		background-repeat: no-repeat;
+	}
+}
+/* END: SELECT BOX */
+
+/* END: VENDOR SALES SCSS */
+
+

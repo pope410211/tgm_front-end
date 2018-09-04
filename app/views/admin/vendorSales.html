@@ -1,4 +1,49 @@
-<section class="vendor-sales" flex layout-fill layout-padding ng-cloak>
+<div class="vendor-sales" ng-cloak>
+	<h2>Welcome {{vendor.vendorName}}!</h2>
+	<div class="sales-list">
+		<section class="vendor-selection" ng-show="vendor.authedAdmin">
+			<select class="selector" ng-model="vendor.selectedSku" ng-change="vendor.getVendSales(vendor.selectedSku)">
+				<option ng-repeat="sk in vendor.vendorSkuArray track by $index" value="{{sk}}">{{sk}}</option>
+			</select>
+		</section>
+		<section class="itemized-sales">
+			<table class="vendor-table">
+				<thead>
+					<tr>
+						<th title="Date"></th>
+						<th title="Sku"></th>
+						<th title="Item"></th>
+						<th title="Qty"></th>
+						<th title="Price"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="vi in vendor.vendorSales | orderBy: '-date'">
+						<td>{{vi.date | date}}</td>
+						<td class="sku">{{vendor.vendorSku}}</td>
+						<td class="center">{{vi.item}}</td>
+						<td class="center">{{vi.qty | number: 0}}</td>
+						<td class="currency">{{vi.price / 100 | currency: '$'}}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2" class="show-sm">Items Sold:</td>
+						<td colspan="3" class="hide-sm">Items Sold:</td>
+						<td colspan="2" class="center">{{vendor.itemTotal}}</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="show-sm">Total Sales:</td>
+						<td colspan="3" class="hide-sm">Total Sales:</td>
+						<td colspan="2">{{vendor.salesTotal / 100 | currency: '$'}}</td>
+					</tr>
+				</tfoot>
+			</table>
+		</section>
+	</div>
+</div>
+
+<!-- <section class="vendor-sales" flex layout-fill layout-padding ng-cloak>
 	<div ng-if="vendor.loading" class="loading-overlay" layout="row" layout-sm="column" layout-align="space-around">
 		<md-progress-circular class="md-warn md-hue-2" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
 	</div>
@@ -40,4 +85,4 @@
 		</div>
 		<md-table-pagination class="vs-section" md-limit="vendor.query.limit" md-limit-options="[5, 10, 15]" md-page="vendor.query.page" md-total="{{vendor.itemTotal}}" md-page-select></md-table-pagination>
 	</section>
-</section>
+</section> -->
