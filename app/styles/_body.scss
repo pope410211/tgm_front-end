@@ -18,17 +18,14 @@
 	.welcome {
 		.welcome-img{
 			width: 75%;
-			@media (min-width: $lrg-scr) {
-				width: 90%;
-			}
 		}
 
 		.welcome-info {
 			width: 100%;
 			word-wrap: break-word;
-			@media (min-width: $lrg-scr) {
-				width: 80%;
-				padding-left: 10%;
+			@media (min-width: $med-scr) {
+				width: 70%;
+				padding-left: 15%;
 			}
 		}
 	}
