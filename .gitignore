@@ -3,4 +3,5 @@
 /.tmp
 /.sass-cache
 /bower_components
-.firebase
+/.firebase
+database.rules.json
