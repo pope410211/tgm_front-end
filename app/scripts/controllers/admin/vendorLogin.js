@@ -33,26 +33,26 @@
 							});
 						} else {
 							var title = 'Authentication Error';
-							var message = '<b>Code: </b>' + loginRes.code + '<br /> <b>Message: </b>' + loginRes.message;
+							var message = 'Code: ' + loginRes.code + '\nMessage: ' + loginRes.message;
 							alert(title + '\n' + message);
 							self.loader = false;
 						}
 					} catch(e) {
 						console.error('LoginCtrl | Login Error: ', e);
 						var title = 'Authentication Error';
-						var message = '<b>Code: </b>' + e.code + '<br /> <b>Message: </b>' + e.message;
+						var message = 'Code: ' + e.code + '\nMessage: ' + e.message;
 						alert(title + '\n' + message);
 						self.loader = false;
 					}
 				}).catch(function(error) {
 					try {
 						var title = 'Authentication Error';
-						var message = '<b>Code: </b>'+ error.code + ' <br />  <b>Message: </b>' + error.message;
+						var message = 'Code: '+ error.code + '\nMessage: ' + error.message;
 						alert(title + '\n' + message);
 						self.loader = false;
 					} catch(e) {
 						var title = 'Authentication Error';
-						var message = '<b>Code: </b> <br />  <b>Message: </b> There was error logging in.<br />Please close your browser and try again.<br />If problem persists, contact Turtle Girls Market';
+						var message = 'Message:  There was error logging in.<br />Please close your browser and try again.<br />If problem persists, contact Turtle Girls Market';
 						alert(title + '\n' + message);
 						self.loader = false;
 					}
