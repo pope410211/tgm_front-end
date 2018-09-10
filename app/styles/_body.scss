@@ -14,10 +14,24 @@
 		text-align: center;
 		padding-top: 2rem;
 	}
-	.welcome-img{
-		width: 75%;
-		@media (min-width: $lrg-scr) {
-			width: 100%;
+
+	.welcome {
+		.welcome-img{
+			width: 87%;
+
+			@media (min-width: $med-scr) {
+				width: 75%;
+			}
+		}
+
+		.welcome-info {
+			width: 80%;
+			padding-left: 10%;
+			word-wrap: break-word;
+			@media (min-width: $med-scr) {
+				width: 70%;
+				padding-left: 15%;
+			}
 		}
 	}
 
